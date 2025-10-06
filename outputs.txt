@@ -1,0 +1,184 @@
+====== Operating System Lab Assignment 1 ======
+
+--- Task 1: Creating 3 Child Processes using os.fork() ---
+Parent (PID:6960): Forked child with PID 6967
+  Child-1: PID=6967, Parent PID=6960
+Parent (PID:6960): Forked child with PID 6968
+  Child-2: PID=6968, Parent PID=6960
+  Child-3: PID=6969, Parent PID=6960
+Parent (PID:6960): Forked child with PID 6969
+Parent: All child processes have finished.
+--------------------------------------------------
+
+--- Task 2: Executing Commands in Child Processes ---
+
+  Child (PID:6988) executing: 'ls -l'
+total 8
+-rwxrwxrwx 1 root root 8094 Oct  3 11:34 process_management.py
+Parent: Child for 'List Files' has finished.
+
+  Child (PID:6989) executing: 'date'
+Fri Oct  3 11:34:55 UTC 2025
+Parent: Child for 'Current Date' has finished.
+
+  Child (PID:6990) executing: 'ps aux'
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.1  21884 12816 ?        Ss   10:41   0:01 /usr/lib/systemd/systemd --system --deserialize=53
+root           2  0.0  0.0   3072  1584 ?        Sl   10:41   0:00 /init
+root           6  0.0  0.0   3088  2044 ?        Sl   10:41   0:00 plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --l
+root          52  0.0  0.1  50428 15120 ?        S<s  10:41   0:00 /usr/lib/systemd/systemd-journald
+root         113  0.0  0.0  25636  6576 ?        Ss   10:41   0:00 /usr/lib/systemd/systemd-udevd
+systemd+     122  0.0  0.1  21456 12096 ?        Ss   10:41   0:00 /usr/lib/systemd/systemd-resolved
+systemd+     123  0.0  0.0  91024  7632 ?        Ssl  10:41   0:00 /usr/lib/systemd/systemd-timesyncd
+root         199  0.0  0.0   4236  2448 ?        Ss   10:41   0:00 /usr/sbin/cron -f -P
+message+     200  0.0  0.0   9816  5184 ?        Ss   10:41   0:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --syste
+root         208  0.0  0.1  17964  8208 ?        Ss   10:41   0:00 /usr/lib/systemd/systemd-logind
+root         210  0.0  0.1 1756096 12384 ?       Ssl  10:41   0:00 /usr/libexec/wsl-pro-service -vv
+root         219  0.0  0.0   3160  2016 hvc0     Ss+  10:41   0:00 /sbin/agetty -o -p -- \u --noclear --keep-baud - 115200,38400,9600 vt
+root         230  0.0  0.0   3116  1728 tty1     Ss+  10:41   0:00 /sbin/agetty -o -p -- \u --noclear - linux
+root         237  0.0  0.2 107028 22608 ?        Ssl  10:41   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-sh
+root         358  0.0  0.0   3076   864 ?        Ss   10:41   0:00 /init
+root         359  0.0  0.0   3092  1008 ?        S    10:41   0:00 /init
+abhinav      360  0.0  0.0   6076  5184 pts/0    Ss+  10:41   0:00 /bin/bash
+root         459  0.0  0.0   6692  4176 pts/1    Ss   10:43   0:00 /bin/login -f
+abhinav      502  0.0  0.1  20104 10800 ?        Ss   10:43   0:00 /usr/lib/systemd/systemd --user
+abhinav      503  0.0  0.0  21152  3456 ?        S    10:43   0:00 (sd-pam)
+abhinav      525  0.0  0.0   6056  5040 pts/1    S+   10:43   0:00 -bash
+polkitd      888  0.0  0.0 308164  7632 ?        Ssl  10:46   0:00 /usr/lib/polkit-1/polkitd --no-debug
+syslog      2770  0.0  0.0 222508  5184 ?        Ssl  10:47   0:00 /usr/sbin/rsyslogd -n -iNONE
+root        3933  0.0  0.0   3076   864 ?        Ss   11:18   0:00 /init
+root        3934  0.0  0.0   3092   864 ?        S    11:18   0:00 /init
+abhinav     3941  0.0  0.0   6072  5184 pts/2    Ss+  11:18   0:00 -bash
+root        4003  0.0  0.0   3088   864 ?        Ss   11:21   0:00 /init
+root        4004  0.0  0.0   3088  1008 ?        S    11:21   0:00 /init
+abhinav     4005  0.0  0.0   2800  1584 pts/3    Ss+  11:21   0:00 sh -c "$VSCODE_WSL_EXT_LOCATION/scripts/wslServer.sh" e3a5acfb517a443
+abhinav     4006  0.0  0.0   2800  1728 pts/3    S+   11:21   0:00 sh /mnt/c/Users/Abhinav/.vscode/extensions/ms-vscode-remote.remote-ws
+abhinav     4012  0.0  0.0   2800  1728 pts/3    S+   11:21   0:00 sh /home/abhinav/.vscode-server/bin/e3a5acfb517a443235981655413d56653
+abhinav     4016  0.4  1.4 11839160 117284 pts/3 Sl+  11:21   0:03 /home/abhinav/.vscode-server/bin/e3a5acfb517a443235981655413d56653310
+root        4027  0.0  0.0   3080   864 ?        Ss   11:21   0:00 /init
+root        4028  0.0  0.0   3096  1008 ?        S    11:21   0:00 /init
+abhinav     4029  0.0  0.7 1019024 59760 pts/4   Ssl+ 11:21   0:00 /home/abhinav/.vscode-server/bin/e3a5acfb517a443235981655413d56653310
+root        4040  0.0  0.0   3080   864 ?        Ss   11:21   0:00 /init
+root        4041  0.0  0.0   3096  1152 ?        S    11:21   0:00 /init
+abhinav     4046  0.1  0.6 1012448 54748 pts/5   Ssl+ 11:21   0:01 /home/abhinav/.vscode-server/bin/e3a5acfb517a443235981655413d56653310
+abhinav     4057  0.0  0.7 1261792 57656 pts/3   Sl+  11:21   0:00 /home/abhinav/.vscode-server/bin/e3a5acfb517a443235981655413d56653310
+abhinav     4078  2.4  1.7 33432524 139888 pts/3 Sl+  11:21   0:20 /home/abhinav/.vscode-server/bin/e3a5acfb517a443235981655413d56653310
+abhinav     5236  0.4  0.9 1065304 70876 pts/3   Sl+  11:27   0:01 /home/abhinav/.vscode-server/bin/e3a5acfb517a443235981655413d56653310
+abhinav     5247  0.0  0.0   6208  5184 pts/6    Ss   11:27   0:00 /bin/bash --init-file /home/abhinav/.vscode-server/bin/e3a5acfb517a44
+root        6958  0.7  0.0  14152  6768 pts/6    S+   11:34   0:00 sudo python3 process_management.py
+root        6959  0.0  0.0  14152  2496 pts/7    Ss   11:34   0:00 sudo python3 process_management.py
+root        6960  2.5  0.1  15744 10512 pts/7    S+   11:34   0:00 python3 process_management.py
+abhinav     6977  0.0  0.0   2800  1584 pts/3    S+   11:34   0:00 /bin/sh -c "/home/abhinav/.vscode-server/bin/e3a5acfb517a443235981655
+abhinav     6978  0.0  0.0   4752  3456 pts/3    S+   11:34   0:00 /bin/bash /home/abhinav/.vscode-server/bin/e3a5acfb517a44323598165541
+abhinav     6987  0.0  0.0   3124  1728 pts/3    S+   11:34   0:00 sleep 1
+root        6990  0.0  0.0   8280  4176 pts/7    R+   11:34   0:00 ps aux
+Parent: Child for 'Running Processes' has finished.
+
+Parent: All command-executing children have finished.
+--------------------------------------------------
+
+--- Task 3: Simulating Zombie & Orphan Processes ---
+
+-- Part A: Zombie Process --
+  Parent (PID:6960): Created child 6991, not waiting.
+  >> The child is now a zombie. Check with 'ps -el | grep defunct' in another terminal.
+  Zombie Child (PID:6991): Exiting now.
+  Parent: Cleaned up the zombie process.
+
+-- Part B: Orphan Process --
+  Parent (PID:6960): Exiting before my child.
+  Orphan Child (PID:7040): My parent is 6960.
+  Orphan Child: My original parent died. My new parent is 6960 (init/systemd).
+
+Parent: Orphan simulation complete.
+--------------------------------------------------
+
+--- Task 4: Inspecting Process PID 6960 from /proc ---
+  Name: python3
+  State:        R (running)
+  VmSize:          15744 kB
+  Executable Path: /usr/bin/python3.12
+  Open File Descriptors: 4
+--------------------------------------------------
+
+--- Task 5: Demonstrating Process Prioritization (CPU Overload) ---
+  Detected 18 CPU cores. Creating 36 processes to ensure competition.
+  Starting a mix of default-priority and low-priority children...
+  Default Priority-0 (PID:7066, Nice:0): Starting CPU work.
+  Low Priority-0 (PID:7067, Nice:15): Starting CPU work.
+  Default Priority-4 (PID:7074, Nice:0): Starting CPU work.
+  Default Priority-3 (PID:7072, Nice:0): Starting CPU work.
+  Low Priority-1 (PID:7069, Nice:15): Starting CPU work.
+  Low Priority-4 (PID:7075, Nice:15): Starting CPU work.
+  Low Priority-2 (PID:7071, Nice:15): Starting CPU work.
+  Default Priority-1 (PID:7068, Nice:0): Starting CPU work.
+  Default Priority-2 (PID:7070, Nice:0): Starting CPU work.
+  Low Priority-3 (PID:7073, Nice:15): Starting CPU work.
+  Low Priority-5 (PID:7077, Nice:15): Starting CPU work.
+  Default Priority-7 (PID:7080, Nice:0): Starting CPU work.
+  Low Priority-6 (PID:7079, Nice:15): Starting CPU work.
+  Low Priority-7 (PID:7081, Nice:15): Starting CPU work.
+  Default Priority-8 (PID:7082, Nice:0): Starting CPU work.
+  Default Priority-5 (PID:7076, Nice:0): Starting CPU work.
+  Default Priority-6 (PID:7078, Nice:0): Starting CPU work.
+  Low Priority-9 (PID:7085, Nice:15): Starting CPU work.
+  Low Priority-11 (PID:7089, Nice:15): Starting CPU work.
+  Default Priority-10 (PID:7086, Nice:0): Starting CPU work.
+  Default Priority-9 (PID:7084, Nice:0): Starting CPU work.
+  Default Priority-11 (PID:7088, Nice:0): Starting CPU work.
+  Low Priority-10 (PID:7087, Nice:15): Starting CPU work.
+  Default Priority-14 (PID:7094, Nice:0): Starting CPU work.
+  Low Priority-8 (PID:7083, Nice:15): Starting CPU work.
+  Low Priority-16 (PID:7099, Nice:15): Starting CPU work.
+  Default Priority-13 (PID:7092, Nice:0): Starting CPU work.
+  Default Priority-12 (PID:7090, Nice:0): Starting CPU work.
+  Low Priority-13 (PID:7093, Nice:15): Starting CPU work.
+  Low Priority-15 (PID:7097, Nice:15): Starting CPU work.
+  Default Priority-17 (PID:7100, Nice:0): Starting CPU work.
+  Default Priority-16 (PID:7098, Nice:0): Starting CPU work.
+  Low Priority-17 (PID:7101, Nice:15): Starting CPU work.
+  Low Priority-12 (PID:7091, Nice:15): Starting CPU work.
+  Low Priority-14 (PID:7095, Nice:15): Starting CPU work.
+  Default Priority-15 (PID:7096, Nice:0): Starting CPU work.
+  Default Priority-6: Finished in 12.71 seconds.
+  Default Priority-8: Finished in 12.76 seconds.
+  Default Priority-7: Finished in 13.03 seconds.
+  Default Priority-0: Finished in 13.32 seconds.
+  Default Priority-12: Finished in 13.17 seconds.
+  Default Priority-14: Finished in 14.08 seconds.
+  Default Priority-3: Finished in 14.33 seconds.
+  Default Priority-17: Finished in 14.57 seconds.
+  Default Priority-1: Finished in 15.97 seconds.
+  Default Priority-5: Finished in 16.16 seconds.
+  Default Priority-15: Finished in 16.18 seconds.
+  Default Priority-11: Finished in 16.66 seconds.
+  Default Priority-2: Finished in 18.49 seconds.
+  Default Priority-16: Finished in 19.39 seconds.
+  Default Priority-9: Finished in 22.99 seconds.
+  Default Priority-13: Finished in 23.09 seconds.
+  Default Priority-10: Finished in 28.13 seconds.
+  Low Priority-9: Finished in 30.58 seconds.
+  Low Priority-2: Finished in 32.33 seconds.
+  Low Priority-14: Finished in 34.13 seconds.
+  Low Priority-10: Finished in 34.52 seconds.
+  Default Priority-4: Finished in 35.02 seconds.
+  Low Priority-12: Finished in 35.57 seconds.
+  Low Priority-1: Finished in 36.50 seconds.
+  Low Priority-0: Finished in 36.51 seconds.
+  Low Priority-4: Finished in 36.88 seconds.
+  Low Priority-16: Finished in 36.86 seconds.
+  Low Priority-7: Finished in 37.21 seconds.
+  Low Priority-13: Finished in 37.31 seconds.
+  Low Priority-3: Finished in 37.58 seconds.
+  Low Priority-15: Finished in 37.51 seconds.
+  Low Priority-5: Finished in 37.75 seconds.
+  Low Priority-17: Finished in 38.00 seconds.
+  Low Priority-8: Finished in 38.35 seconds.
+  Low Priority-11: Finished in 38.47 seconds.
+  Low Priority-6: Finished in 39.47 seconds.
+
+Parent: All CPU-intensive children have finished.
+Observe the finish times: the 'Default Priority' processes should have generally finished earlier than the 'Low Priority' ones.
+--------------------------------------------------
+
+======== All Tasks Completed ========
