@@ -26,11 +26,11 @@ The script successfully implements the following five tasks:
 
 1.  Clone the repository to your local machine:
     ```bash
-    git clone <your-repository-url>
+    git clone https://github.com/theabhinav0231/OS-Lab
     ```
 2.  Navigate into the project directory:
     ```bash
-    cd <repository-name>
+    cd OS-Lab
     ```
 3.  Execute the main script using Python 3:
     ```bash
