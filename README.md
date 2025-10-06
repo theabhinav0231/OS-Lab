@@ -44,5 +44,5 @@ The script successfully implements the following five tasks:
 
 * **`process_management.py`**: The main Python script containing the source code for all five tasks.
 * **`output.txt`**: A sample output file generated from a successful run of the script.
-* **`report.pdf`**: A detailed lab report summarizing the objectives, implementation, code snapshots, results, and complexity analysis.
+* **`OS Lab Assignment-1 Report.pdf`**: A detailed lab report summarizing the objectives, implementation, code snapshots, results, and complexity analysis.
 * **`README.md`**: This file, providing an overview and instructions for the project.
