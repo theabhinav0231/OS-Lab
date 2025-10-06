@@ -1,4 +1,3 @@
-# OS-Lab
 # OS Lab Assignment 1: Process Management in Python
 
 This repository contains the solution for the "Process Creation and Management" lab experiment for the ENCS351 Operating System course. The project uses Python's `os` module to simulate fundamental process management operations in a Linux environment.
