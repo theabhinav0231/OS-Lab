@@ -1,0 +1,101 @@
+OPERATING SYSTEMS LAB REPORT - ASSIGNMENT 4
+
+The objective of this assignment is to develop an automated Python script that sequentially performs operating system auditing tasks without user intervention. The specific goals are:
+
+To automatically fetch Process Control Block (PCB) data.
+
+To perform a silent background check for Virtual Machine (VM) signatures.
+
+To programmatically create, modify, and delete files to test file system permissions and operations.
+
+To recursively traverse directory structures and generate a tree view log.
+
+THEORY & CONCEPTS
+
+2.1 Automated System Auditing
+Automation in OS contexts allows for rapid deployment of checks across multiple servers. Instead of manual interaction, scripts use standard APIs to gather data.
+
+2.2 System Fingerprinting
+
+Kernel Stats: Using platform.uname() to identify the OS kernel version and architecture.
+
+MAC OUI Analysis: Identifying hardware vendors (e.g., VMware, VirtualBox) via the first 24 bits of the MAC address.
+
+2.3 Programmatic File Manipulation
+Using the os and shutil libraries to manage the file lifecycle (Creation -> Modification -> Deletion) ensures that the application has the necessary write permissions in the host environment.
+
+ALGORITHM / IMPLEMENTATION LOGIC
+
+The solution is implemented as a linear, sequential script (os_lab_4_simulation.py) with the following flow:
+
+Initialization: The script defines utility functions for logging to system_log.txt.
+
+Sequential Execution: - task1_process_info() is called to log PID/PPID.
+
+task2_system_stats() is called to dump OS info.
+
+task3_vm_detection() is called to analyze hardware signatures.
+
+task4_file_operations() performs a predefined set of CRUD operations on a test directory.
+
+task5_directory_traversal() builds a temporary tree, walks it, and cleans it up.
+
+Termination: The script exits automatically after the last task, printing a summary.
+
+TEST SCENARIOS AND OUTPUTS
+
+Scenario 1: Execution on Host Machine Action: Run python os_lab_4_simulation.py Expected Output Log:
+
+  OS LAB 4: AUTOMATED SIMULATION
+
+
+========================================
+
+[Task 1]
+
+System Call: os.getpid() -> 12345
+
+Child Process Spawned... Terminated.
+
+[Task 2]
+
+System: Windows/Linux
+
+Machine: AMD64/x86_64
+
+[Task 3]
+
+Current MAC: 00:05:69:xx:xx:xx
+
+MAC Analysis Result: Virtual Machine (VMware)
+
+[Task 4]
+
+Created directory: lab4_test_dir
+
+[File Content]: Operating System Lab Assignment 4
+
+Renamed os_lab_test.txt to os_lab_final.txt
+
+Cleaning up... Deleted directory.
+
+[Task 5]
+
+Scanning directory structure...
+
+Traversal Complete: Found 2 files in 3 directories.
+
+CONCLUSION
+
+This automated simulation demonstrates the power of Python for Operating System management and auditing.
+
+By removing the interactive menu, the tool can be integrated into startup scripts or cron jobs.
+
+The script successfully identified the environment (Physical vs. Virtual).
+
+It verified file system integrity by successfully performing write and delete operations.
+
+The use of an external log file (system_log.txt) ensures that audit trails are preserved even after the script terminates.
+
+============================================================
+END OF REPORT

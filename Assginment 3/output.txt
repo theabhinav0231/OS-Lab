@@ -1,0 +1,97 @@
+========================================
+1. Priority Scheduling (Non-Preemptive)
+========================================
+Simulating with 3 processes (Hardcoded Data):
+  Process 1: Arrival=0, Burst=10, Priority=2
+  Process 2: Arrival=1, Burst=5, Priority=1
+  Process 3: Arrival=2, Burst=8, Priority=3
+
+Execution Order: 1 -> 2 -> 3
+
+ID   Priority  Arrival   Burst     Wait      Turnaround
+1    2         0         10        0         10        
+2    1         1         5         9         14        
+3    3         2         8         13        21        
+
+Average Waiting Time: 7.33
+Average Turnaround Time: 15.00
+
+========================================
+2. Round Robin Scheduling
+========================================
+Time Quantum: 2
+Processes Burst Times: [5, 12, 8]
+
+ID   Burst     Wait      Turnaround
+1    5         8         13        
+2    12        13        25        
+3    8         13        21        
+
+Average Waiting Time: 11.33
+Average Turnaround Time: 19.67
+
+========================================
+3. Sequential File Allocation
+========================================
+Total Disk Blocks: 20
+
+Attempting to allocate 'File_A' (Start: 0, Len: 5)...
+  Success: 'File_A' allocated at blocks 0 to 4.
+
+Attempting to allocate 'File_B' (Start: 4, Len: 3)...
+  Error: Block conflict. Could not allocate 'File_B'.
+
+Attempting to allocate 'File_C' (Start: 6, Len: 4)...
+  Success: 'File_C' allocated at blocks 6 to 9.
+
+Final Allocated Files Table:
+File: File_A | Start: 0 | Length: 5
+File: File_C | Start: 6 | Length: 4
+
+========================================
+4. Indexed File Allocation
+========================================
+Disk initialized with some random occupied blocks.
+Request: Create 'MyDocument.txt' of size 4 blocks.
+
+Allocation Successful for 'MyDocument.txt':
+Index Block: 1
+Data Pointers stored in Index Block: [2, 4, 5, 6]
+
+========================================
+5. Memory Allocation (Best Fit Strategy)
+========================================
+Memory Blocks: [100, 500, 200, 300, 600]
+Process Requests: [212, 417, 112, 426]
+
+Process No.    Process Size   Block No.      Remaining In Block
+1              212            4              88
+2              417            2              83
+3              112            3              88
+4              426            5              174
+
+========================================
+6. MFT & MVT Simulation
+========================================
+
+--- MFT (Fixed Partition) ---
+Total Memory: 1000, Block Size: 300
+Processes to allocate: [275, 400, 290]
+
+Process   Req       Allocated?     Internal Frag
+1         275       YES            25
+2         400       NO (>Block)    -
+3         290       YES            10
+Total Internal Fragmentation: 35
+
+--- MVT (Variable Partition) ---
+Total Memory: 1000
+Process 1 (400): Allocated
+Process 2 (275): Allocated
+Process 3 (550): Failed (Only 325 remaining)
+Final External Fragmentation (Remaining): 325
+
+========================================
+All Simulations Completed Successfully.
+========================================
+=== Code execution complete ===

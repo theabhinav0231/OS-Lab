@@ -1,0 +1,82 @@
+OS Lab Assignment 2 – Process Management Simulation Report
+
+===============================================================
+
+Experiment Objectives:
+
+Simulate process creation and execution using Python multiprocessing module
+
+Understand how processes run in parallel and how the system waits for them
+
+Log process start and end events into a file
+
+Observe simple process lifecycle behavior (start → execute → terminate)
+
+Demonstrate basic scheduling using sleep-based simulated delays
+
+Tasks Completed:
+1. Process Creation Using multiprocessing.Process
+
+Created two independent child processes using multiprocessing.Process()
+
+Each child process executes the function simulate_process()
+
+Process details (start and end events) logged into process_log.txt
+
+Parent process waits for both children using .join()
+
+2. Simulated Process Execution
+
+Each child process sleeps for a given duration (2s and 3s) to mimic real system execution time
+
+Ensures processes run concurrently, not sequentially
+
+Execution order varies depending on scheduling behavior
+
+3. Logging Process Lifecycle
+
+A dedicated log file process_log.txt is generated automatically
+
+Log entries include:
+
+“Process X started”
+
+“Process X ended”
+
+Demonstrates how OS tracks basic process-level events
+
+4. System Start and Shutdown Simulation
+
+The parent program prints:
+
+System Starting...
+
+System Shutdown.
+
+Simulates a minimal OS-like behavior during initialization and termination
+
+Results Summary:
+
+Two processes executed successfully and independently
+
+Log file created with correct timestamps of start and end events
+
+Demonstrated the concept of parallel execution
+
+Parent process correctly synchronized with children using .join()
+
+No runtime errors or deadlocks observed
+
+Challenges:
+
+Execution order of log entries changes depending on CPU scheduling
+
+Some IDEs required “if name == 'main'” block due to multiprocessing limitations on Windows
+
+Must ensure the log file is closed properly when multiple processes write into it
+
+Conclusion:
+
+Successfully simulated process creation, execution, and termination using Python’s multiprocessing module.
+The experiment demonstrates how real operating systems manage multiple processes in parallel.
+All assignment requirements were met, and the program produced correct logs reflecting process lifecycle events.

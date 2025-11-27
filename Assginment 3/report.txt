@@ -1,0 +1,125 @@
+OPERATING SYSTEMS LAB REPORT
+
+Title:      OS Algorithms Simulation Suite
+Student:    [Your Name]
+Roll No:    [Your Roll No]
+Date:       [Current Date]
+
+OBJECTIVE
+
+The objective of this assignment is to design and implement a unified simulation tool that demonstrates core Operating System concepts, specifically:
+
+CPU Scheduling (Priority and Round Robin).
+
+File System Allocation (Sequential and Indexed).
+
+Memory Management (Contiguous Allocation and Partitioning).
+
+THEORY & CONCEPTS
+
+2.1 CPU Scheduling
+
+Priority Scheduling: A non-preemptive algorithm where the CPU is assigned to the process with the highest priority. If priorities are equal, FCFS is used.
+
+Round Robin (RR): A preemptive algorithm where each process is assigned a fixed time unit (quantum). It is designed for time-sharing systems.
+
+2.2 File Allocation
+
+Sequential Allocation: Files are stored in contiguous blocks. It is simple but suffers from external fragmentation and difficulty in file expansion.
+
+Indexed Allocation: A special block (Index Block) contains pointers to all data blocks of a file. It supports direct access and eliminates external fragmentation but incurs pointer overhead.
+
+2.3 Memory Management
+
+First Fit: Allocates the first hole that is big enough. Fast but may lead to fragmentation.
+
+Best Fit: Allocates the smallest hole that is big enough. Minimizes wasted space but is slower.
+
+Worst Fit: Allocates the largest hole. Produces large leftover holes.
+
+MFT (Fixed Partitioning): Memory is divided into fixed-sized blocks. Sufferers from Internal Fragmentation.
+
+MVT (Variable Partitioning): Memory is allocated exactly as needed. Suffers from External Fragmentation.
+
+ALGORITHM / IMPLEMENTATION LOGIC
+
+The project is implemented as a single Python module (os_lab_simulation.py) containing distinct functions for each task, controlled by a main while loop menu.
+
+Input Handling: The tool accepts dynamic user input for process attributes (arrival time, burst time, priority) and memory configurations.
+
+Data Structures:
+
+Lists and Dictionaries are used to store process control blocks (PCBs).
+
+Boolean arrays (disk = [0]*50) track free/busy status for file allocation.
+
+Execution Flow:
+
+User selects a module.
+
+Module prompts for specific inputs (e.g., number of processes, block sizes).
+
+Algorithm processes data.
+
+Results (Gantt charts, tables, fragmentation stats) are printed to the console.
+
+TEST CASES AND OUTPUTS
+
+Test Case 1: Priority Scheduling
+Input:
+
+Process 1: Burst=10, Priority=2
+
+Process 2: Burst=5,  Priority=1
+
+Process 3: Burst=8,  Priority=3
+Output:
+
+Execution Order: P2 -> P1 -> P3
+
+Average Waiting Time calculated correctly based on completion order.
+
+Test Case 2: Memory Allocation (Best Fit)
+Input:
+
+Blocks: [100, 500, 200, 300, 600]
+
+Processes: [212, 417, 112, 426]
+Output:
+
+Process 212 -> Block 300 (Best Fit)
+
+Process 417 -> Block 500 (Best Fit)
+
+Process 112 -> Block 200 (Best Fit)
+
+Process 426 -> Block 600 (Best Fit)
+
+Test Case 3: MFT Simulation
+Input:
+
+Total Memory: 1000, Block Size: 300
+
+Process Req: 275
+Output:
+
+Allocation: YES
+
+Internal Fragmentation: 25 (300 - 275)
+
+CONCLUSION
+
+In this lab assignment, we successfully simulated fundamental OS algorithms.
+
+Priority scheduling showed how important tasks can be prioritized but hinted at the risk of starvation for low-priority processes.
+
+Round Robin demonstrated fairness in CPU time distribution.
+
+The comparison between Sequential and Indexed allocation highlighted the trade-off between access speed and fragmentation.
+
+Memory allocation simulations visualized how different "Fit" strategies impact memory utilization and fragmentation (Internal vs. External).
+
+The Python implementation effectively serves as an educational tool to visualize these backend OS mechanisms.
+
+============================================================
+END OF REPORT

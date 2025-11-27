@@ -1,0 +1,68 @@
+
+========================================
+   OS LAB 4: AUTOMATED SIMULATION
+========================================
+
+==================================================
+   Task 1: Process Information (System Calls)
+==================================================
+[2025-11-27 13:56:51] System Call: os.getpid() -> 8
+[2025-11-27 13:56:51] System Call: os.getppid() -> 1
+[2025-11-27 13:56:51] System Call: os.getcwd() -> /home/bard
+
+[Simulating Child Process Creation...]
+Child process simulation failed: [Errno 2] No such file or directory: 'ping'
+
+==================================================
+   Task 2: System Information Detection
+==================================================
+System         : Linux
+[2025-11-27 13:56:51] Detected System: Linux
+Node Name      : localhost
+[2025-11-27 13:56:51] Detected Node Name: localhost
+Release        : 4.4.0
+[2025-11-27 13:56:51] Detected Release: 4.4.0
+Version        : #1 SMP Sun Jan 10 15:06:54 PST 2016
+[2025-11-27 13:56:51] Detected Version: #1 SMP Sun Jan 10 15:06:54 PST 2016
+Machine        : x86_64
+[2025-11-27 13:56:51] Detected Machine: x86_64
+Processor      : 
+[2025-11-27 13:56:51] Detected Processor: 
+
+==================================================
+   Task 3: Virtual Machine (VM) Detection
+==================================================
+Current MAC Address: 83:0c:30:c0:03:0f
+[2025-11-27 13:56:51] MAC Analysis Result: Unknown / Physical Machine
+
+Checking Hypervisor signatures in /sys/class/dmi/...
+
+==================================================
+   Task 4: Automated File System Operations
+==================================================
+[2025-11-27 13:56:51] Created directory: lab4_test_dir
+[2025-11-27 13:56:51] Created and wrote to file: lab4_test_dir/os_lab_test.txt
+  [File Content]: Operating System Lab Assignment 4
+Task: File Systems
+[2025-11-27 13:56:51] Renamed os_lab_test.txt to os_lab_final.txt
+
+Cleaning up created files (Simulation Reset)...
+[2025-11-27 13:56:51] Deleted directory: lab4_test_dir
+
+==================================================
+   Task 5: Directory Traversal (os.walk)
+==================================================
+Scanning directory structure for: lab4_tree_demo
+
+|-- lab4_tree_demo/
+    |-- root_file.txt
+    |-- subdir2/
+    |-- subdir1/
+        |-- nested.txt
+[2025-11-27 13:56:51] Traversal Complete: Found 2 files in 3 directories.
+
+========================================
+All tasks completed successfully.
+Check 'system_log.txt' for activity logs.
+========================================
+=== Code execution complete ===
